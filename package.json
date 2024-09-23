@@ -5,13 +5,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
-    "serve": "cd src && live-server --port=4455 --no-css-inject"
+    "serve": "cd src && live-server --port=4455 --no-css-inject",
+    "build:css": "cross-env NODE_ENV=production npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "build:js": "cpx \"./src/**/*.js\" ./dist/",
+    "build:html": "cpx \"./src/**/*.html\" ./dist/",
+    "build": "npm run build:css && npm run build:js && npm run build:html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "cpx": "^1.5.0",
+    "cross-env": "^7.0.3",
     "tailwindcss": "^3.4.11"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47"
   }
 }
