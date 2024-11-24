@@ -354,14 +354,12 @@
 <section class="max-w-xl mx-auto py-16">
     <h2 class="text-4xl font-bold text-center mb-6 text-slate-800">Subscribe to our Newsletter</h2>
     
-    <form name="subscribe-form" method="POST" data-netlify="true" action="/">
-        <!-- Hidden field for Netlify to prevent spam submissions -->
-        <input type="hidden" name="form-name" value="subscribe-form">
-        
+    <form name="subscribe-form" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="subscribe-form" />
         <input type="email" name="email" placeholder="Enter your email address" required>
-        
         <button type="submit">Subscribe</button>
     </form>
+    
     
     <p id="thank-you-message" class="text-green-600 mt-6 hidden">Thank you for subscribing!</p>
 </section>
