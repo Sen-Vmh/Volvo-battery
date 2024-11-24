@@ -10,7 +10,7 @@
     "build:js": "cpx \"./src/**/*.js\" ./dist/",
     "build:html": "cpx \"./src/**/*.html\" ./dist/",
     "build:img": "cpx './src/**/*.{jpg,png,gif,svg,webp}' ./dist/img/",
-    "build": "npm run build:css && npm run build:js && npm run build:html"
+    "build": "npm run build:css && npm run build:js && npm run build:html && npm run build:img"
   },
   "keywords": [],
   "author": "",
