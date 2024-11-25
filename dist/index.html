@@ -5,16 +5,468 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind - Alpine Exercises</title>
     <link rel="stylesheet" href="output.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="manifest" href="./img/site.webmanifest">
     <script defer src="./javascript/alpine3.14.1.min.js"></script>
 </head>
-<body class="text-slate-700 bg-slate-50">
-<main class="container mx-auto flex flex-col items-center">
-    <h1 class="heading_1 text-center">VOLVO</h1>
-    <div class="bg-slate-100 w-72 text-center p-5">
-        <h2 class="font-bold">battery data</h2>
-        <hr class="my-3">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat illum accusantium quisquam nemo consequatur harum, reprehenderit quasi sint praesentium dignissimos.</p>
+<body class="text-slate-800 bg-slate-100">
+<nav class="bg-white/95 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="text-3xl font-extrabold text-slate-800 tracking-tight items-center">
+            BrainBin<span class="text-green-400 text-4xl py-0 my-0 font-medium">.</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 text-lg font-medium">
+            <a href="#about" class="text-slate-600 hover:text-green-500 transition duration-300">About</a>
+            <a href="#showcase" class="text-slate-600 hover:text-green-500 transition duration-300">Showcase</a>
+            <a href="#roadmap" class="text-slate-600 hover:text-green-500 transition duration-300">Roadmap</a>
+            <a href="#survey" class="text-slate-600 hover:text-green-500 transition duration-300">Survey</a>
+            <a href="#newsletter" class="text-slate-600 hover:text-green-500 transition duration-300">Newsletter</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" class="block md:hidden text-slate-800 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
     </div>
-</main>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+        <a href="#about" class="block px-6 py-3 text-slate-600 hover:text-green-500 transition duration-300">About</a>
+        <a href="#showcase" class="block px-6 py-3 text-slate-600 hover:text-green-500 transition duration-300">Showcase</a>
+        <a href="#roadmap" class="block px-6 py-3 text-slate-600 hover:text-green-500 transition duration-300">Roadmap</a>
+        <a href="#survey" class="block px-6 py-3 text-slate-600 hover:text-green-500 transition duration-300">Survey</a>
+        <a href="#newsletter" class="block px-6 py-3 text-slate-600 hover:text-green-500 transition duration-300">Newsletter</a>
+        
+    </div>
+</nav>
+
+
+<!-- Hero Section -->
+<div class="relative text-center text-7xl font-bold py-28 bg-cover bg-center overflow-hidden">
+    <!-- Background Layer -->
+    <div 
+        class="absolute inset-0 bg-cover bg-center" 
+        style="background-image: url('./img/hero.jpg'); z-index: -1; filter: brightness(0.5);">
+    </div>
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80 z-0"></div>
+    
+    <!-- Content Layer -->
+    <div class="relative z-10 text-white px-4">
+        <h1 class="text-6xl md:text-8xl font-extrabold leading-tight tracking-wide">
+            The Future Of Sorting!
+        </h1>
+        <p class="py-6 text-4xl md:text-6xl font-light tracking-wider">
+            <span class="text-green-400 text-6xl font-medium"> S</span>elf<span class="text-green-400 text-6xl font-medium"> S</span>orting<span class="font-medium text-green-400 text-6xl"> T</span>rash<span class="text-green-400 text-6xl font-medium"> C</span>an
+        </p>
+        <a href="#about" 
+           class="inline-block mt-8 px-8 py-4 text-lg font-semibold bg-green-500 rounded-full shadow-lg hover:bg-green-400 transition duration-300">
+            Learn More
+        </a>
+    </div>
+</div>
+
+
+
+<section id="about" class="py-20 bg-gradient-to-b from-white to-slate-100 relative overflow-hidden">
+    <!-- Background Decorative Element -->
+    <div class="absolute inset-0 pointer-events-none opacity-20 bg-[url('./img/about-bg.jpg')] bg-cover bg-center"></div>
+
+    <div class="relative container mx-auto text-center px-4">
+        <!-- Heading -->
+        <h2 class="text-5xl md:text-6xl font-extrabold text-slate-800 leading-tight tracking-tight mb-6">
+            Who We Are
+        </h2>
+        
+        <!-- Text Content -->
+        <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-10">
+            At <span class="font-bold text-green-500">BrainBin</span>, we are dedicated to transforming how sorting is done. 
+            Combining advanced algorithms with an intuitive design, we aim to make sorting tasks <strong>faster</strong>, 
+            <strong>smarter</strong>, and <strong>more efficient</strong>. 
+            Together, we build solutions that redefine innovation.
+        </p>
+        
+        
+        <!-- Features Section -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            <!-- Feature 1 -->
+            <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition duration-300">
+                <div class="text-green-500 text-4xl mb-4">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Advanced Algorithms</h3>
+                <p class="text-sm text-slate-600">
+                    Our cutting-edge algorithms ensure unmatched performance and accuracy.
+                </p>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition duration-300">
+                <div class="text-green-500 text-4xl mb-4">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Innovative Solutions</h3>
+                <p class="text-sm text-slate-600">
+                    Creative problem-solving that adapts to your specific needs.
+                </p>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="p-6 bg-white shadow-lg rounded-lg hover:shadow-xl transition duration-300">
+                <div class="text-green-500 text-4xl mb-4">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Time Efficiency</h3>
+                <p class="text-sm text-slate-600">
+                    Save time with processes designed for maximum efficiency.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Showcase Section -->
+
+<section id="showcase" class="py-20 bg-slate-50">
+    <div class="container mx-auto px-6 lg:px-16">
+        <!-- Title -->
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-slate-800 mb-4">Smart Bin Pro</h1>
+            <p class="text-xl text-slate-600">Revolutionizing Waste Sorting with AI Precision</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex flex-col lg:flex-row items-center">
+            <!-- 3D Model Section -->
+            <div class="lg:w-1/2 w-full flex justify-center items-center relative">
+                <div class="bg-white shadow-2xl rounded-xl p-4">
+                    <img src="./img/smart_bin_3d.png" alt="Smart Bin Pro 3D Model" class="w-full h-auto object-contain">
+                </div>
+                <div class="absolute top-4 right-4 bg-green-500 text-white px-4 py-1 rounded-full text-sm shadow-lg">
+                    New Model 2024
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="lg:w-1/2 w-full lg:pl-12 mt-8 lg:mt-0">
+                <h2 class="text-3xl font-bold text-slate-800 mb-6">Key Features</h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">
+                            ✓
+                        </span>
+                        <p class="text-slate-600">
+                            <strong>AI-Powered Sorting:</strong> Automatically categorizes waste into recyclables, compostables, and general trash.
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">
+                            ✓
+                        </span>
+                        <p class="text-slate-600">
+                            <strong>Touchless Operation:</strong> Motion sensors ensure hygienic usage in any environment.
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">
+                            ✓
+                        </span>
+                        <p class="text-slate-600">
+                            <strong>Real-Time Analytics:</strong> Tracks waste patterns and sends data to your smartphone via the companion app.
+                        </p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="bg-green-500 text-white rounded-full h-6 w-6 flex items-center justify-center mr-4">
+                            ✓
+                        </span>
+                        <p class="text-slate-600">
+                            <strong>Compact Design:</strong> Sleek and modern, perfect for homes, offices, or industrial spaces.
+                        </p>
+                    </li>
+                </ul>
+
+                <!-- Dimensions and CTA -->
+
+                <div class="mt-8">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Specifications</h3>
+                    <p class="text-slate-600 mb-4">
+                        <strong>Dimensions:</strong> 40cm x 60cm x 100cm <br>
+                        <strong>Weight:</strong> 12kg <br>
+                        <strong>Material:</strong> Reinforced ABS with aluminum trim.
+                    </p>
+                    <div class="flex items-center space-x-6">
+                        <span class="text-green-500 font-bold text-3xl">$ ---</span>
+                        <a href="#" class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 shadow-lg">COMING SOON</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<!-- Roadmap Section -->
+
+<section id="roadmap" class="py-20 bg-gradient-to-b  from-gray-100 to-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-16 text-slate-800">Our Innovation Roadmap</h2>
+        
+        <div class="relative max-w-5xl mx-auto">
+            <!-- Vertical Line - Responsive Visibility -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-green-500 h-full opacity-20 hidden md:block"></div>
+            
+            <!-- Roadmap Timeline -->
+            <div class="space-y-12 relative">
+                <!-- Roadmap Item 1 -->
+                <div class="flex flex-col md:flex-row items-center w-full">
+                    <div class="w-full md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500 transform transition hover:scale-105">
+                            <h3 class="text-2xl font-bold mb-2 text-slate-800">How it all started?</h3>
+                            <p class="text-slate-600">
+                                Launch of our Minimum Viable Product with basic AI sorting capabilities and initial machine learning models.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-green-500 rounded-full z-10"></div>
+                    <div class="w-full md:w-1/2 md:pl-8 order-first md:order-none"></div>
+                </div>
+                
+                <!-- Roadmap Item 2 -->
+                <div class="flex flex-col md:flex-row items-center w-full">
+                    <div class="w-full md:w-1/2 md:pr-8 order-last md:order-first"></div>
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-green-500 rounded-full z-10"></div>
+                    <div class="w-full md:w-1/2 md:pl-8 mb-4 md:mb-0">
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500 transform transition hover:scale-105">
+                            <h3 class="text-2xl font-bold mb-2 text-slate-800">Q4 2024: Cloud Integration</h3>
+                            <p class="text-slate-600">
+                                Introduce cloud-based analytics, remote monitoring, and advanced machine learning model updates for improved sorting accuracy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Roadmap Item 3 -->
+                <div class="flex flex-col md:flex-row items-center w-full">
+                    <div class="w-full md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500 transform transition hover:scale-105">
+                            <h3 class="text-2xl font-bold mb-2 text-slate-800">Q2 2025: Enterprise Solutions</h3>
+                            <p class="text-slate-600">
+                                Launch comprehensive enterprise-level sorting solutions with custom integration, predictive maintenance, and scalable AI infrastructure.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-green-500 rounded-full z-10"></div>
+                    <div class="w-full md:w-1/2 md:pl-8 order-first md:order-none"></div>
+                </div>
+                
+                <!-- Roadmap Item 4 -->
+                <div class="flex flex-col md:flex-row items-center w-full">
+                    <div class="w-full md:w-1/2 md:pr-8 order-last md:order-first"></div>
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-green-500 rounded-full z-10"></div>
+                    <div class="w-full md:w-1/2 md:pl-8 mb-4 md:mb-0">
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500 transform transition hover:scale-105">
+                            <h3 class="text-2xl font-bold mb-2 text-slate-800">Q4 2025: Global Expansion</h3>
+                            <p class="text-slate-600">
+                                International market entry with localized sorting solutions, multi-language support, and region-specific machine learning models.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Form Section -->
+
+<!-- Future Insights Section -->
+<section id="survey" class="py-16 bg-slate-100">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12 text-slate-800">Help Shape the Future of BrainBin</h2>
+        
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Survey Description -->
+                <div class="flex flex-col justify-center space-y-6">
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">Your Insights Matter</h3>
+                        <p class="text-slate-600">
+                            We're committed to developing sorting solutions that truly meet user needs. Your feedback will directly influence our product development roadmap.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">What We're Looking For</h3>
+                        <ul class="list-disc list-inside text-slate-600 space-y-2">
+                            <li>Current sorting challenges</li>
+                            <li>Feature wish lists</li>
+                            <li>Industry-specific needs</li>
+                            <li>Potential use cases</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Survey Link -->
+                <div class="flex justify-center items-center">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqH3z3V7LP1qGzI1qK2FDZXhiVNReFRdzU83HrbXA2reh_Ow/viewform" 
+                       target="_blank" 
+                       class="w-full bg-green-500 text-white text-lg font-semibold py-3 px-6 rounded-lg shadow-md text-center transition duration-300 hover:bg-green-600 hover:shadow-lg">
+                        Take the Survey
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Incentive Section -->
+            <div class="mt-8 text-center bg-green-50 p-6 rounded-lg">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">
+                    Contribute to Innovation
+                </h3>
+                <p class="text-slate-600 mb-4">
+                    Participants in our survey will receive:
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                        </svg>
+                        <p class="text-center mt-2 font-bold text-slate-800">Early Access</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <p class="text-center mt-2 font-bold text-slate-800">Discount</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                        </svg>
+                        <p class="text-center mt-2 font-bold text-slate-800">Feedback</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Newsletter Section -->
+<div class="bg-slate-50 sm:py-16" id="newsletter">
+    <section class="max-w-xl mx-auto py-16 px-6 bg-gradient-to-br from-green-100 via-white to-green-50 shadow-xl sm:rounded-2xl">
+        <h2 class="text-4xl font-bold text-center mb-8 text-slate-800">Stay Updated with Our Newsletter</h2>
+        
+        <form action="https://formsubmit.co/veh.fanni29@gmail.com" method="POST" class="space-y-6">
+            <div class="relative">
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Enter your email" 
+                    required 
+                    class="w-full p-4 pl-12 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-green-500 text-slate-700 placeholder-slate-400 transition duration-300"
+                >
+                <!-- Icon inside the input field -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-4 top-1/2 transform -translate-y-1/2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 10l-2 2m0 0l-2-2m2 2V4m-6 4H4" />
+                </svg>
+            </div>
+            
+            <button 
+                type="submit" 
+                class="w-full bg-gradient-to-r from-green-500 to-teal-500 text-white py-3 px-6 rounded-xl text-lg font-semibold shadow-md hover:shadow-lg transform transition duration-300 ease-in-out hover:scale-105 focus:ring-2 focus:ring-green-500 focus:outline-none"
+            >
+                Subscribe Now
+            </button>   
+        </form>
+    </section>
+</div>
+
+
+
+<footer class="bg-white border-t border-slate-200 py-16">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Logo and Tagline -->
+            <div>
+                <h3 class="text-3xl font-extrabold text-slate-800 mb-4">
+                    BrainBin<span class="text-green-400 text-4xl">.</span>
+                </h3>
+                <p class="text-slate-600 text-sm">
+                    Revolutionizing sorting with intelligent, adaptive technologies.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-bold mb-4 text-lg text-slate-800">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#about" class="text-slate-600 hover:text-green-500 transition duration-300">About Us</a></li>
+                    <li><a href="#showcase" class="text-slate-600 hover:text-green-500 transition duration-300">Showcase</a></li>
+                    <li><a href="#roadmap" class="text-slate-600 hover:text-green-500 transition duration-300">Roadmap</a></li>
+                    <li><a href="#survey" class="text-slate-600 hover:text-green-500 transition duration-300">Survey</a></li>
+                    <li><a href="#newsletter" class="text-slate-600 hover:text-green-500 transition duration-300">Newsletter</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+                <h4 class="font-bold mb-4 text-lg text-slate-800">Contact</h4>
+                <ul class="space-y-3">
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        </svg>
+                        <a href="mailto:support@brainbin.com" class="text-slate-600 hover:text-green-500 transition duration-300">
+                            support@brainbin.com
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-green-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                        </svg>
+                        <span class="text-slate-600">+1 (555) 123-4567</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Social Media Links -->
+            <div>
+                <h4 class="font-bold mb-4 text-lg text-slate-800">Follow Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-2xl text-slate-600 hover:text-green-500 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-2xl text-slate-600 hover:text-green-500 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-2xl text-slate-600 hover:text-green-500 transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright and Legal -->
+        <div class="mt-12 pt-8 border-t border-slate-200 text-center">
+            <p class="text-sm text-slate-500">
+                &copy; 2024 BrainBin Technologies. All Rights Reserved. 
+                <a href="#" class="ml-4 text-slate-600 hover:text-green-500 transition duration-300">Privacy Policy</a> | 
+                <a href="#" class="ml-4 text-slate-600 hover:text-green-500 transition duration-300">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+</script>
 </body>
 </html>
